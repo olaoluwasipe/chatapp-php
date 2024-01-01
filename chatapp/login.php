@@ -33,5 +33,6 @@
     </div>
 
     <script src="js/pass-show-hide.js" defer></script>
+    <script src="js/sigin.js" defer></script>
 </body>
 </html>
