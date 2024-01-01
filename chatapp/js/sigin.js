@@ -1,5 +1,6 @@
 const form = document.querySelector(".signup form"),
-      continueBtn = document.querySelector(".signup .btn input");
+      continueBtn = document.querySelector(".signup .btn input"),
+      errorTxt = document.querySelector(".error-txt");
 
 form.onsubmit = (e) => {
     e.preventDefault();
@@ -14,6 +15,12 @@ continueBtn.onclick = () => {
             if(xhr.status === 200) {
                 let data = xhr.response;
                 console.log(data);
+                if(data == "Success") {
+
+                } else {
+                    errorTxt.textContent = data;
+                    errorTxt.style.display = "block";
+                }
             }
         }
     }
