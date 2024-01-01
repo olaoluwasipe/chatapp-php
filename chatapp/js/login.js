@@ -1,5 +1,5 @@
-const form = document.querySelector(".signup form"),
-      continueBtn = document.querySelector(".signup .btn input"),
+const form = document.querySelector(".login form"),
+      continueBtn = document.querySelector(".login .btn input"),
       errorTxt = document.querySelector(".error-txt");
 
 form.onsubmit = (e) => {
