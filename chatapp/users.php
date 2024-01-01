@@ -1,21 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Realtime Chat App</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-</head>
-<body>
+<?php include_once("includes/header.php") ?>
     <div class="wrapper">
         <section class="users">
             <header>
                 <div class="content">
-                    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Profile image">
+                    <img src="<?php echo $userimg ? 'functions/images/'.$userimg : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'; ?>" alt="Profile image">
                     <div class="details">
-                        <span>Big Man Ola</span>
-                        <p>Active Now</p>
+                        <span><?php echo $username; ?></span>
+                        <p><?php echo ucwords($status); ?></p>
                     </div>
                 </div>
                 <a href="" class="logout">Logout</a>
@@ -28,7 +19,7 @@
             <div class="users-list">
                 <a href="#">
                     <div class="content">
-                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="profile-pic">
+                        <img src="<?php echo $userimg ? 'functions/images/'.$userimg : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'; ?>" alt="profile-pic">
                         <div class="details">
                             <span>Other dude</span>
                             <p>This is a test message</p>
