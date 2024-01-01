@@ -17,16 +17,7 @@
                 <button><i class="fas fa-search"></i></button>
             </div>
             <div class="users-list">
-                <a href="#">
-                    <div class="content">
-                        <img src="<?php echo $userimg ? 'functions/images/'.$userimg : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'; ?>" alt="profile-pic">
-                        <div class="details">
-                            <span>Other dude</span>
-                            <p>This is a test message</p>
-                        </div>
-                    </div>
-                    <div class="status-dot"><i class="fas fa-circle"></i></div>
-                </a>
+                
             </div>
         </section>
     </div>
