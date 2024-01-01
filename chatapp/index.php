@@ -42,7 +42,7 @@
                     <input type="button" value="Continue to Chat">
                 </div>
             </form>
-            <div class="link">Already signed up? <a href="login.html">Login now</a></div>
+            <div class="link">Already signed up? <a href="login.php">Login now</a></div>
 
             <script src="js/pass-show-hide.js" defer></script>
             <script src="js/sigin.js" defer></script>

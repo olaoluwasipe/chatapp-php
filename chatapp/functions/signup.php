@@ -37,7 +37,7 @@ if(!empty($fname) && !empty($lname) && !empty($email) && !empty($password)){
     if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $checkemail = $conn->query("SELECT email FROM users WHERE email = '{$email}'");
         if(mysqli_num_rows($checkemail) > 0){
-            echo `$email already exists, please login `;
+            echo $email.' already exists, please login ';
         }else{
             if(isset($_FILES['image'])) {
                 $img_name = $_FILES['image']['name'];
