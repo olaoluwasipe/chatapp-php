@@ -6,9 +6,29 @@ searchBtn.onclick = () => {
     searchBar.classList.toggle("active");
     searchBar.focus();
     searchBtn.classList.toggle("active");
+    searchTerm = "";
 }
 
-setInterval(() => {
+searchBar.onkeyup = () => {
+    let searchTerm = searchBar.value;
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "functions/search.php", true);
+    xhr.onload = () => {
+        if(xhr.readyState === XMLHttpRequest.DONE) {
+            if(xhr.status === 200) {
+                let data = xhr.response;
+                console.log(data);
+                userList.innerHTML = data;
+                // clearInterval(loadUsers);
+            }
+        }
+    }
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send("searchTerm=" + searchTerm);
+}
+
+const loadUsers = setInterval(() => {
     let xhr = new XMLHttpRequest();
     xhr.open("GET", "functions/users.php", true);
     xhr.onload = () => {
@@ -16,7 +36,7 @@ setInterval(() => {
             if(xhr.status === 200) {
                 let data = xhr.response;
                 console.log(data);
-                userList.innerHTML = data;
+                if(!searchBar.classList.contains("active")) userList.innerHTML = data;
             }
         }
     }
