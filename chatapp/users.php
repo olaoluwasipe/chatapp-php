@@ -9,7 +9,7 @@
                         <p><?php echo ucwords($status); ?></p>
                     </div>
                 </div>
-                <a href="" class="logout">Logout</a>
+                <a href="functions/logout.php?logout_id=<?php echo $unq; ?>" class="logout">Logout</a>
             </header>
             <div class="search">
                 <span class="text">Select a user to start chatting</span>
