@@ -1,11 +1,20 @@
 const form = document.querySelector(".typing-area"),
       sendBtn = document.querySelector("button"),
-      chatBox = document.querySelector(".chat-box");
+      chatBox = document.querySelector(".chat-box"),
       inputField = document.querySelector(".input-field");
 
 
 form.onsubmit = (e) => {
     e.preventDefault();
+}
+
+
+chatBox.onmouseenter = () => {
+    chatBox.classList.add("active");
+}
+
+chatBox.onmouseleave = () => {
+    chatBox.classList.remove("active");
 }
 
 
@@ -18,6 +27,7 @@ sendBtn.onclick = (e) => {
                 let data = xhr.response;
                 console.log(data);
                 inputField.value = "";
+                chatBox.scrollTo(0, chatBox.scrollHeight)
             }
         }
     }
@@ -34,6 +44,7 @@ setInterval(() => {
             if(xhr.status === 200) {
                 let data = xhr.response;
                 chatBox.innerHTML = data;
+                if(!chatBox.classList.contains("active")) chatBox.scrollTo(0, chatBox.scrollHeight)
             }
         }
     }

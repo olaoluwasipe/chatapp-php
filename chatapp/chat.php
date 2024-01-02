@@ -26,17 +26,7 @@
                 </div>
             </header>
             <div class="chat-box">
-                <div class="chat outgoing">
-                    <div class="details">
-                        <p>Lorem ipsum dolor sit amet consectetur.</p>
-                    </div>
-                </div>
-                <div class="chat incoming">
-                    <img src="<?php echo $nuimg ? 'functions/images/'.$nuimg : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'; ?>" alt="profile-pic">
-                    <div class="details">
-                        <p>Lorem ipsum dolor sit amet consectetur.</p>
-                    </div>
-                </div>
+                
             </div>
             <form action="#" class="typing-area">
                 <input type="hidden" name="user_id" value="<?php echo $unq; ?>">
