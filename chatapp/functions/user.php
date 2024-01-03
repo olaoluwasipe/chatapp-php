@@ -15,7 +15,12 @@ while($row = mysqli_fetch_assoc($getusers)) {
     // Trimming messages if the characters are more than 26 
     (strlen($result) > 26 ) ? $msg = substr($result, 0, 28).'...' : $msg = $result;
     // Adding a You: text before messages belonging to the current users
-    ($unique_id == $roww['outgoing_msg_id']) ? $you = 'You: ' : $you = "";
+    if($result !== "No message available")
+    {
+        ($unique_id == $roww['outgoing_msg_id']) ? $you = 'You: ' : $you = "";
+    }else{
+        $you = "";
+    }
     // Check if users are offline or online.
     ($row['status'] == "Offline now") ? $offline = "offline" : $offline = "";
 
