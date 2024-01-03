@@ -1,3 +1,9 @@
+<?php 
+    session_start();
+    if(isset($_SESSION['unique_id'])) {
+        header("location: users.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,21 +23,22 @@
                 <div class="error-txt">This is an error message!</div>
                 <div class="field input">
                     <label for="">Email Address</label>
-                    <input type="email" placeholder="Enter Your Email Address">
+                    <input type="email" name="email" placeholder="Enter Your Email Address">
                 </div>
                 <div class="field input">
                     <label for="">Password</label>
-                    <input type="password" placeholder="Enter Password">
+                    <input type="password" name="password" placeholder="Enter Password">
                     <i class="fas fa-eye"></i>
                 </div>
                 <div class="field btn">
                     <input type="button" value="Continue to Chat">
                 </div>
             </form>
-            <div class="link">Haven't signed up? <a href="index.html">Signup now</a></div>
+            <div class="link">Haven't signed up? <a href="index.php">Signup now</a></div>
         </section>
     </div>
 
     <script src="js/pass-show-hide.js" defer></script>
+    <script src="js/login.js" defer></script>
 </body>
 </html>
