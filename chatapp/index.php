@@ -21,14 +21,19 @@
             </header>
             <form action="#" enctype="multipart/form-data">
                 <div class="error-txt">This is an error message!</div>
-                <div class="name-details">
-                    <div class="field input">
-                        <label for="">First Name</label>
-                        <input type="text" name="fname" required placeholder="First Name">
+                <div class="flex">
+                    <div class="image-box">
+                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="">
                     </div>
-                    <div class="field input">
-                        <label for="">Last Name</label>
-                        <input type="text" name="lname" required placeholder="Last Name">
+                    <div class="name-details">
+                        <div class="field input">
+                            <label for="">First Name</label>
+                            <input type="text" name="fname" required placeholder="First Name">
+                        </div>
+                        <div class="field input">
+                            <label for="">Last Name</label>
+                            <input type="text" name="lname" required placeholder="Last Name">
+                        </div>
                     </div>
                 </div>
                 <div class="field input">
@@ -42,7 +47,7 @@
                 </div>
                 <div class="field image">
                     <label for="">Select Image</label>
-                    <input type="file" required name="image">
+                    <input type="file" required name="image" accept=".png,.jpg,.jpeg">
                 </div>
                 <div class="field btn">
                     <input type="button" value="Continue to Chat">
