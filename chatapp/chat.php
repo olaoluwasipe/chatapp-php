@@ -32,6 +32,7 @@
                 <input type="hidden" name="user_id" value="<?php echo $unq; ?>">
                 <input type="hidden" name="receiver" value="<?php echo $uns; ?>">
                 <input type="text" class="input-field" name="message" placeholder="Type a message here...">
+                <button><i class="fab fa-image"></i></button>
                 <button><i class="fab fa-telegram-plane"></i></button>
             </form>
         </section>
