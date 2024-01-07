@@ -24,6 +24,13 @@ body{
 }
 
 /* SIgnup Form */
+.signup form .image-box img {
+    width: 130px;
+    height: 130px;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 50%;
+}
 .form {
     padding: 25px 30px;
 }
@@ -56,9 +63,11 @@ body{
 .form form .field label{
     margin-bottom: 2px;
 }
-.form form .name-details {
+.form form .flex {
     display: flex;
     gap: 20px;
+    justify-content: space-between;
+    align-items: center;
 }
 .form form .field input{
     outline: none;
@@ -71,8 +80,9 @@ body{
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-.form form .image input {
+.form form .image {
     font-size: 17px;
+    display: none;
 }
 
 .form form .btn input {

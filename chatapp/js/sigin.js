@@ -1,10 +1,29 @@
 const form = document.querySelector(".signup form"),
       continueBtn = document.querySelector(".signup .btn input"),
+      userImg = document.querySelector(".signup .image-box img"),
+      imgBtn = form.querySelector("input[type='file']"),
       errorTxt = document.querySelector(".error-txt");
 
 form.onsubmit = (e) => {
     e.preventDefault();
 
+}
+
+userImg.onclick = () => {
+    imgBtn.click()
+}
+
+imgBtn.onchange = () => {
+    const fileArr = ['png', 'jpeg', 'jpg'];
+    var img = URL.createObjectURL(imgBtn.files[0]);
+    var imgName = imgBtn.files[0].name;
+    var imgExt = imgName.split('.')[1];
+    if(fileArr.includes(imgExt)) {
+        userImg.src = img;
+    } else {
+        alert("We only accept png, jpeg and jpg files")
+        imgBtn.value = "";
+    }
 }
 
 continueBtn.onclick = () => {
