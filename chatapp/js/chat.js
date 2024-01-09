@@ -29,6 +29,19 @@ attachImage.onclick = () => {
     attachedFile.click();
 }
 
+attachedFile.onchange = () => {
+    const fileArr = ['png', 'jpeg', 'jpg'];
+    var img = URL.createObjectURL(attachedFile.files[0]);
+    var imgName = attachedFile.files[0].name;
+    var imgExt = imgName.split('.')[1];
+    if(fileArr.includes(imgExt)) {
+        attachImage.src = img;
+    } else {
+        alert("We only accept png, jpeg and jpg files")
+        attachedFile.value = "";
+    }
+}
+
 sendBtn.onclick = (e) => {
     let xhr = new XMLHttpRequest();
     xhr.open("POST", "functions/insert-chat.php", true);
@@ -38,6 +51,9 @@ sendBtn.onclick = (e) => {
                 let data = xhr.response;
                 console.log(data);
                 inputField.value = "";
+                attachedFile.value = "";
+                attachImage.src = "https://cpworldgroup.com/wp-content/uploads/2021/01/placeholder.png";
+                attachBox.classList.remove("active")
                 chatBox.scrollTo(0, chatBox.scrollHeight)
             }
         }

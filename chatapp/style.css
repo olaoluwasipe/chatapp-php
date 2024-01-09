@@ -353,9 +353,17 @@ body{
     height: 70%;
 }
 
+.chat-area .chat .details img.attachment {
+    width: 100% !important;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
 .chat-area .attach img {
-    width: 600px;
-    height: 600px;
+    width: 400px;
+    height: 400px;
     cursor: pointer;
     object-fit: cover;
     border-radius: 10px;

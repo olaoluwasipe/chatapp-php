@@ -31,14 +31,14 @@
             <form action="#" class="typing-area">
                 <input type="hidden" name="user_id" value="<?php echo $unq; ?>">
                 <input type="hidden" name="receiver" value="<?php echo $uns; ?>">
+                <input type="file" style="display: none;" name="attachment" id="attachedFile">
                 <input type="text" class="input-field" name="message" placeholder="Type a message here...">
                 <button id="attachBtn"><ion-icon name="attach-outline"></ion-icon></button>
                 <button id="sendBtn"><i class="fab fa-telegram-plane"></i></button>
             </form>
             <div class="attach">
                 <div class="img-box">
-                    <img src="" alt="attached-image">
-                    <input type="file" style="display: none;" name="file" id="attachedFile">
+                    <img src="https://cpworldgroup.com/wp-content/uploads/2021/01/placeholder.png" alt="attached-image">
                 </div>
             </div>
         </section>

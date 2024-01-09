@@ -12,9 +12,11 @@
                     OR (outgoing_msg_id = '$incoming_id' AND incoming_msg_id = '$outgoing_id') ORDER BY msg_id ASC");
         if(mysqli_num_rows($messages) > 0) {
             while($row = mysqli_fetch_assoc($messages)) {
+                $img = !empty($row['attachment']) ? '<img class="attachment" src="functions/images/'.$row['attachment'].'" alt="attached-image">' : '';
                 if($row['outgoing_msg_id'] === $outgoing_id){
                     $output .= '<div class="chat outgoing">
                                     <div class="details">
+                                        '.$img.'
                                         <p>'.$row['msg'].'</p>
                                     </div>
                                 </div>';
@@ -22,6 +24,7 @@
                     $output .= '<div class="chat incoming">
                                     <img src="'. ($row['img'] ? 'functions/images/'.$row['img'] : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png') .'" alt="profile-pic">
                                     <div class="details">
+                                        '.$img.'
                                         <p>'.$row['msg'].'</p>
                                     </div>
                                 </div>';
