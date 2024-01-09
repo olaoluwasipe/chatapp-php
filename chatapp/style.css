@@ -369,3 +369,13 @@ body{
     border-radius: 10px;
     border: 1px solid #333;
 }
+
+.chat-area .viewImage {
+    position: absolute;
+    z-index: 99999;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #000;
+}

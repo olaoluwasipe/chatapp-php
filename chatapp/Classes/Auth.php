@@ -42,6 +42,7 @@ class Auth {
     public function registerUser($fname, $lname, $email, $password, $newimgName) {
         $status = "Active now";
         $randomId = rand(time(), 100000000);
+        $password = password_hash($password, PASSWORD_BCRYPT);
 
         $insertUser = $this->conn->query("INSERT INTO users (unique_id, fname, lname, email, password, img, status) VALUES ('{$randomId}', '{$fname}', '{$lname}', '{$email}', '{$password}', '{$newimgName}', '{$status}')");
 
@@ -56,7 +57,7 @@ class Auth {
         } else {
             return 'Something went wrong';
         }
-    }
+    } 
 
     public function register($post) {
         $fname = $this->sanitizeInput($post['fname']);
@@ -98,13 +99,15 @@ class Auth {
         $password = $this->sanitizeInput($post['password']);
 
         if (!empty($email) && !empty($password)) {
-            $checkUser = $this->conn->query("SELECT * FROM users WHERE email = '$email' AND password = '$password'");
+            $checkUser = $this->conn->query("SELECT * FROM users WHERE email = '$email'");
             
             if (mysqli_num_rows($checkUser) > 0) {
                 $row = mysqli_fetch_assoc($checkUser);
-                
-                $status = "Active now";
-                $updateStatus = $this->conn->query("UPDATE users SET status = '{$status}' WHERE unique_id = '{$row['unique_id']}'");
+
+                if(password_verify($password, $row['password'])) {
+                    $status = "Active now";
+                    $updateStatus = $this->conn->query("UPDATE users SET status = '{$status}' WHERE unique_id = '{$row['unique_id']}'");
+                }
 
                 if ($updateStatus) {
                     $_SESSION['unique_id'] = $row['unique_id'];

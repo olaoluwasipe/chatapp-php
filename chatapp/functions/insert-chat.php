@@ -16,6 +16,10 @@ if(isset($_SESSION['unique_id'])) {
 
             $newimgName = $auth->uploadImage($imgName, $imgType, $tmpName);
 
+            if($newimgName === 'You can only upload an image file of jpeg, jpg, png!'){
+                $newimgName = NULL;
+            }
+
             if ($newimgName !== false) {
                 $insertmessage = $conn->query("INSERT INTO messages (incoming_msg_id, outgoing_msg_id, msg, attachment) VALUES ('$incoming_id', '$outgoing_id', '$message', '$newimgName')") or die(mysqli_error($conn));
             } else {
