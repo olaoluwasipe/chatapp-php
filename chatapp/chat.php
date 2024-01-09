@@ -32,13 +32,21 @@
                 <input type="hidden" name="user_id" value="<?php echo $unq; ?>">
                 <input type="hidden" name="receiver" value="<?php echo $uns; ?>">
                 <input type="text" class="input-field" name="message" placeholder="Type a message here...">
-                <button><i class="fab fa-image"></i></button>
-                <button><i class="fab fa-telegram-plane"></i></button>
+                <button id="attachBtn"><ion-icon name="attach-outline"></ion-icon></button>
+                <button id="sendBtn"><i class="fab fa-telegram-plane"></i></button>
             </form>
+            <div class="attach">
+                <div class="img-box">
+                    <img src="" alt="attached-image">
+                    <input type="file" style="display: none;" name="file" id="attachedFile">
+                </div>
+            </div>
         </section>
     </div>
 
 
     <script src="js/chat.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
