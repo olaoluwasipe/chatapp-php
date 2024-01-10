@@ -106,8 +106,8 @@ class Auth {
 
                 if(password_verify($password, $row['password'])) {
                     $status = "Active now";
-                    $updateStatus = $this->conn->query("UPDATE users SET status = '{$status}' WHERE unique_id = '{$row['unique_id']}'");
                 }
+                $updateStatus = $this->conn->query("UPDATE users SET status = '{$status}' WHERE unique_id = '{$row['unique_id']}'");
 
                 if ($updateStatus) {
                     $_SESSION['unique_id'] = $row['unique_id'];
